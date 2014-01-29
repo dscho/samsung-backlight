@@ -6,6 +6,9 @@ PWD       := $(shell pwd)
 all:
 	$(MAKE) -C $(KERNELDIR) M=$(PWD)
 
+modules_install:
+	$(MAKE) -C $(KERNELDIR) M=$(PWD) $@
+
 clean:
 	rm -f *.o *~ core .depend .*.cmd *.ko *.mod.c
 	rm -f Module.markers Module.symvers modules.order
